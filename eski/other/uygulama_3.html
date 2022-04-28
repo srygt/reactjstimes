@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #div1{
+                width:20%;
+                height:150px;
+            }
+            #div2{
+                width:100%;
+                height:100px;
+                background-color: lightgoldenrodyellow;
+            }
+            #div3{
+                width:100%;
+                height:50px;
+                background-color:lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <div id="div2"></div>
+            <div id="div3"></div>
+        </div>
+    <script>
+        var a = [
+            {yorum:"Birinci yorum gelecek",isim:"Ali Demir",yas:14},
+            {yorum:"İkinci yorum gelecek",isim:"Veli Demir",yas:34},
+            {yorum:"Üçüncü yorum gelecek",isim:"Engin Demir",yas:24},
+            {yorum:"Dördüncü ilk yorum gelecek",isim:"Cenk Demir",yas:34}
+        ]
+
+        var x;
+        function sayiUret(){
+            
+            x = Math.round(Math.random()*3);
+            
+        }
+
+        setInterval(function(){
+            sayiUret();
+            document.getElementById("div2").innerHTML = a[x].yorum;
+            document.getElementById("div3").innerHTML = a[x].isim;
+        },2000);
+    </script>
+    </body>
+</html>

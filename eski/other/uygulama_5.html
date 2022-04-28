@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #div1{
+                width:40%;
+                height:auto;
+                position: relative;
+                top:150px;
+                left:50px;
+            }
+
+            #saat{
+                width:150px;
+                height:150px;                
+                background-color: white; 
+                float:left;
+                font-size:120px;
+                text-align: center;
+                font-weight: bold;                margin-left: 4px;
+            }
+            #dakika{
+                width:150px;
+                height:150px;                
+                background-color: white;             
+                float:left;
+                font-size:120px;
+                text-align: center;
+                font-weight: bold;                margin-left: 4px;
+            }
+            #saniye{
+                width:150px;
+                height:150px;   
+                background-color: white;             
+                float:left;
+                margin-left: 4px;
+                font-size:120px;
+                text-align: center;
+                font-weight: bold;
+            }   
+            body{
+                background-color:gray;
+            }                     
+        </style>
+    </head>
+    <body>
+        
+        <div id="div1">
+            <div id="saat"></div>
+            <div id="dakika"></div>
+            <div id="saniye"></div>
+        </div>
+
+
+        <script>
+            var saat =1;
+            var dakika = 0;
+            var saniye = 10;
+
+            var x= setInterval(function() {
+                document.getElementById("saat").innerHTML = saat;
+                document.getElementById("dakika").innerHTML = dakika;
+                document.getElementById("saniye").innerHTML = saniye--;
+
+                if(document.getElementById("saniye").innerHTML==0){
+                    dakika--;
+                    saniye = 59;
+                }
+                if(document.getElementById("dakika").innerHTML == 0 && 
+                   document.getElementById("saniye").innerHTML == 0){
+                    saat--;
+                    dakika = 59;
+                }
+                if(document.getElementById("saat").innerHTML==0 && 
+                   document.getElementById("dakika").innerHTML == 0 && 
+                   document.getElementById("saniye").innerHTML == 0){
+                    clearInterval(x);
+                }
+            },1000);
+        </script>
+    </body>
+</html>

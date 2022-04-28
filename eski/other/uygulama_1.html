@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            #arttir{
+                padding:5px;
+                border:1px solid green;
+                height:40px;
+                width:40px;
+            }
+            #azalt{
+                padding:5px;
+                border:1px solid red;
+                height:40px;
+                width:40px;
+            }
+            #text{
+                border:1px solid #ccc;
+                height:40px;
+                padding:0px 0px 0px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="text" type="text" name="text" value="0">
+        <button id="arttir" onClick="arttirma()">+</button>
+        <button id="azalt" onClick="azaltma()">-</button>
+
+        <script>
+            function arttirma(){
+                var x = document.getElementById("text").value;
+                x = Number(x);
+                x += 1;
+                document.getElementById("text").value = x;
+            }
+
+            function azaltma(){
+                var x = document.getElementById("text").value;
+                x = Number(x);
+                x -= 1;
+                document.getElementById("text").value = x;
+            }
+
+        </script>
+    </body>
+</html>

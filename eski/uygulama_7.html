@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="div1"></div>
+
+
+        <script>
+            var box = document.getElementById("div1");
+
+            box.style.width= "150px";
+            box.style.height= "150px";
+            box.style.position="absolute";
+            box.style.top="1px";
+            box.style.left="1px";
+            box.style.right="1px";
+            box.style.bottom="1px";
+            box.style.backgroundColor = "blue";
+
+            var yukariDon = false;
+            var asagiIn   = false;
+            var solaDon   = false;
+            var sagaDon   = false;
+
+            function x(box,top,left,right,bottom){
+                var ustKonum = Number(box.style.top.split("px")[0]);
+                var solKonum = Number(box.style.left.split("px")[0]);
+                var sagKonum = Number(box.style.right.split("px")[0]);
+                var altKonum = Number(box.style.bottom.split("px")[0]);
+
+                if(ustKonum >= (window.innerHeight - 150)){
+                    yukariDon = true;
+                }else if(ustKonum <= 0){
+                    yukariDon = false;
+                }
+
+                if(solKonum >= (window.innerHeight - 150)){
+                    yukariDon = true;
+                }else if(solKonum <= 0){
+                    yukariDon = false;
+                }
+
+                if(sagKonum >= (window.innerHeight - 150)){
+                    yukariDon = true;
+                }else if(sagKonum <= 0){
+                    yukariDon = false;
+                }
+
+                if(altKonum >= (window.innerHeight - 150)){
+                    yukariDon = true;
+                }else if(altKonum <= 0){
+                    yukariDon = false;
+                }
+
+                box.style.top = (ustKonum + top).toString() + "px";
+                box.style.left = (solKonum + left).toString() + "px";
+                box.style.right = (sagKonum + right).toString() + "px";
+                box.style.bottom = (altKonum + bottom).toString() + "px";
+
+            }
+            x();
+        </script>
+    </body>
+</html>
